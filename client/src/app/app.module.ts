@@ -14,6 +14,10 @@ import { BoardModeratorComponent } from './board-moderator/board-moderator.compo
 import { BoardUserComponent } from './board-user/board-user.component';
 
 import { httpInterceptorProviders } from './_helpers/http.interceptor';
+import { AddRoomComponent } from './components/add-room/add-room.component';
+import { RoomDetailsComponent } from './components/room-details/room-details.component';
+import { RoomsListComponent } from './components/rooms-list/rooms-list.component';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +28,10 @@ import { httpInterceptorProviders } from './_helpers/http.interceptor';
     ProfileComponent,
     BoardAdminComponent,
     BoardModeratorComponent,
-    BoardUserComponent
+    BoardUserComponent,
+    AddRoomComponent,
+    RoomDetailsComponent,
+    RoomsListComponent
   ],
   imports: [
     BrowserModule,

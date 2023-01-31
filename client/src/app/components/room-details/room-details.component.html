@@ -1,0 +1,96 @@
+
+
+<div *ngIf="viewMode; else editable">
+    <div *ngIf="currentRoom.id">
+      <h4>Room</h4>
+      <div>
+        <label><strong>Title:</strong></label> {{ currentRoom.title }}
+      </div>
+      <div>
+        <label><strong>Description:</strong></label>
+        {{ currentRoom.description }}
+      </div>
+      <div>
+        <label><strong>Status:</strong></label>
+        {{ currentRoom.published ? "Published" : "Pending" }}
+      </div>
+  
+      <a
+        class="badge badge-warning"
+        routerLink="/rooms/{{ currentRoom.id }}"
+      >
+        Edit
+      </a>
+    </div>
+  
+    <div *ngIf="!currentRoom">
+      <br />
+      <p>Please click on a Room...</p>
+    </div>
+  </div>
+  
+  <ng-template #editable>
+    <div *ngIf="currentRoom.id" class="edit-form">
+      <h4>Room</h4>
+      <form>
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            [(ngModel)]="currentRoom.title"
+            name="title"
+          />
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input
+            type="text"
+            class="form-control"
+            id="description"
+            [(ngModel)]="currentRoom.description"
+            name="description"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label><strong>Status:</strong></label>
+          {{ currentRoom.published ? "Published" : "Pending" }}
+        </div>
+      </form>
+  
+      <button
+        class="badge badge-primary mr-2"
+        *ngIf="currentRoom.published"
+        (click)="updatePublished(false)"
+      >
+        UnPublish
+      </button>
+      <button
+        *ngIf="!currentRoom.published"
+        class="badge badge-primary mr-2"
+        (click)="updatePublished(true)"
+      >
+        Publish
+      </button>
+  
+      <button class="badge badge-danger mr-2" (click)="deleteRoom()">
+        Delete
+      </button>
+  
+      <button
+        type="submit"
+        class="badge badge-success mb-2"
+        (click)="updateRoom()"
+      >
+        Update
+      </button>
+      <p>{{ message }}</p>
+    </div>
+  
+    <div *ngIf="!currentRoom.id">
+      <br />
+      <p>Cannot access this Room...</p>
+    </div>
+  </ng-template>

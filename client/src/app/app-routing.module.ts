@@ -8,6 +8,9 @@ import { ProfileComponent } from './profile/profile.component';
 import { BoardUserComponent } from './board-user/board-user.component';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
+import { RoomsListComponent } from './components/rooms-list/rooms-list.component';
+import { RoomDetailsComponent } from './components/room-details/room-details.component';
+import { AddRoomComponent } from './components/add-room/add-room.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -17,7 +20,10 @@ const routes: Routes = [
   { path: 'user', component: BoardUserComponent },
   { path: 'mod', component: BoardModeratorComponent },
   { path: 'admin', component: BoardAdminComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' }
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'rooms', component: RoomsListComponent },
+  { path: 'rooms/:id', component: RoomDetailsComponent },
+  { path: 'add', component: AddRoomComponent }
 ];
 
 @NgModule({
