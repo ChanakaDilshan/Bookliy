@@ -1,5 +1,6 @@
 const db = require("../models");
 const Room = db.rooms;
+const User = db.user;
 
 exports.create = (req, res) => {
     // Validate request
@@ -12,6 +13,8 @@ exports.create = (req, res) => {
     const room = new Room({
       title: req.body.title,
       description: req.body.description,
+      tel: req.body.tel,
+      username: req.body.username,
       published: req.body.published ? req.body.published : false
     });
   

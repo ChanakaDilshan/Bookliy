@@ -7,8 +7,14 @@
         <label><strong>Title:</strong></label> {{ currentRoom.title }}
       </div>
       <div>
-        <label><strong>Description:</strong></label>
+        <label><strong>Location:</strong></label>
         {{ currentRoom.description }}
+      </div>
+      <div>
+        <a href="tel:{{ currentRoom.tel }}">
+        <label><strong>Call:</strong></label>
+        {{ currentRoom.tel }}
+        </a>
       </div>
       <div>
         <label><strong>Status:</strong></label>

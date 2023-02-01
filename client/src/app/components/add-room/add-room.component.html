@@ -14,13 +14,24 @@
         </div>
   
         <div class="form-group">
-          <label for="description">Description</label>
+          <label for="description">Location</label>
           <input
             class="form-control"
             id="description"
             required
             [(ngModel)]="room.description"
             name="description"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="tel">Phone No</label>
+          <input
+            class="form-control"
+            id="tel"
+            required
+            [(ngModel)]="room.tel"
+            name="tel"
           />
         </div>
   

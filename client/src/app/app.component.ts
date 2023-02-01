@@ -11,6 +11,7 @@ export class AppComponent {
   private roles: string[] = [];
   isLoggedIn = false;
   showAdminBoard = false;
+  showAddRoom = false;
   showModeratorBoard = false;
   username?: string;
 
@@ -25,6 +26,8 @@ export class AppComponent {
 
       this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
       this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
+      this.showAddRoom = this.roles.includes('ROLE_ADMIN');
+
 
       this.username = user.username;
     }

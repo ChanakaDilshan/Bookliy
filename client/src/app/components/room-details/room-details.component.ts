@@ -17,6 +17,7 @@ export class RoomDetailsComponent implements OnInit {
   @Input() currentRoom: Room = {
     title: '',
     description: '',
+    tel: '',
     published: false
   };
 

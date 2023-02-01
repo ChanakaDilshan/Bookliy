@@ -17,6 +17,8 @@ import { httpInterceptorProviders } from './_helpers/http.interceptor';
 import { AddRoomComponent } from './components/add-room/add-room.component';
 import { RoomDetailsComponent } from './components/room-details/room-details.component';
 import { RoomsListComponent } from './components/rooms-list/rooms-list.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 
 @NgModule({
@@ -31,13 +33,15 @@ import { RoomsListComponent } from './components/rooms-list/rooms-list.component
     BoardUserComponent,
     AddRoomComponent,
     RoomDetailsComponent,
-    RoomsListComponent
+    RoomsListComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]

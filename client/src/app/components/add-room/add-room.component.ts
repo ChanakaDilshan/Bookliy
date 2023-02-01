@@ -12,6 +12,7 @@ export class AddRoomComponent implements OnInit {
   room: Room = {
     title: '',
     description: '',
+    tel: '',
     published: false
   };
   submitted = false;
@@ -24,7 +25,8 @@ export class AddRoomComponent implements OnInit {
   saveRoom(): void {
     const data = {
       title: this.room.title,
-      description: this.room.description
+      description: this.room.description,
+      tel: this.room.tel
     };
 
     this.roomService.create(data)
@@ -42,6 +44,7 @@ export class AddRoomComponent implements OnInit {
     this.room = {
       title: '',
       description: '',
+      tel: '',
       published: false
     };
   }
